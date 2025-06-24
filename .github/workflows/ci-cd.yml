@@ -16,10 +16,10 @@ jobs:
       - name: Deploy Code to EC2 via SSH
         uses: easingthemes/ssh-deploy@v2.1.5
         with:
-          sshPrivateKey: ${{ secrets.SSH_KEY }}
-          remoteHost: ${{ secrets.SERVER_IP }}
-          remoteUser: ubuntu
-          target: /home/ubuntu/github-ci-cd-node-app
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.SERVER_IP }}
+          REMOTE_USER: ubuntu
+          TARGET: /home/ubuntu/github-ci-cd-node-app
 
       - name: Run Build Commands on EC2
         uses: appleboy/ssh-action@v1.0.0
